@@ -10,6 +10,5 @@ function BudgetProvider ({children}) {
         </BudgetContext.Provider>
         )
     }
-}
 
-export { BudgetContext }
+export { BudgetContext, BudgetProvider }

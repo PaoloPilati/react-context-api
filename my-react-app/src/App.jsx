@@ -5,10 +5,11 @@ import Home from "./pages/Home";
 import ChiSiamo from "./pages/ChiSiamo";
 import Prodotti from "./pages/Prodotti";
 import Articolo from "./pages/Articolo";
+import { BudgetProvider } from "./context/BudgetContext";
 
 export default function App() {
   return (
-    <BudgetContext.Provider>
+    <BudgetProvider>
       <BrowserRouter>
         <Routes>
           <Route element= {<DefaultLayout />}>
@@ -19,6 +20,6 @@ export default function App() {
           </Route>
         </Routes>
       </BrowserRouter>
-    </BudgetContext.Provider>
+    </BudgetProvider>
   )
 }

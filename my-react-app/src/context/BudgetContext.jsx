@@ -12,4 +12,4 @@ function BudgetProvider ({children}) {
     }
 }
 
-export { BudgetContext }
+export { BudgetContext, BudgetProvider }

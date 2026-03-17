@@ -1,5 +1,4 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { BudgetContext } from "./context/BudgetContext";
 import DefaultLayout from "./layouts/DefaultLayout";
 import Home from "./pages/Home";
 import ChiSiamo from "./pages/ChiSiamo";

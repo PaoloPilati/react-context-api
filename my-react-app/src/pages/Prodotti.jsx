@@ -1,9 +1,15 @@
 import { useState, useEffect } from "react";
+import { useContext } from "react";
+import { BudgetContext } from "../context/BudgetContext";
 import axios from "axios";
 import ProductList from "../components/ProductList";
 
 export default function Prodotti() {
   const [products, setProducts] = useState([]);
+  const { budgetMode } = useContext(BudgetContext);
+  const filteredProducts = budgetMode
+  ? products.filter(product => product.price <= 30)
+  : products;
 
   useEffect(() => {
     axios.get("https://fakestoreapi.com/products")
@@ -15,7 +21,7 @@ export default function Prodotti() {
         <div className="container mt-4">
             <h1 className="mb-4">Prodotti</h1>
             <div className="row g-3">
-                <ProductList products={products} />
+                <ProductList products={filteredProducts} />
             </div>
         </div>
   )

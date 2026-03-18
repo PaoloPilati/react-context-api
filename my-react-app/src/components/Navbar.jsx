@@ -18,7 +18,9 @@ export default function Navbar () {
                 <NavLink to="/prodotti" end className="nav-link">Prodotti</NavLink>
                 <NavLink to="/chi-siamo" end className="nav-link">Chi siamo</NavLink>
                 
-                <button onClick={() => setBudgetMode(prev => !prev)}>
+                <button 
+                className="btn btn-outline-light ms-3"
+                onClick={() => setBudgetMode(prev => !prev)}>
                     {budgetMode ? "Disattiva Modalità Budget" : "Attiva Modalità Budget"}
                 </button>
 

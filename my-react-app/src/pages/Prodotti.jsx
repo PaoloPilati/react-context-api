@@ -6,9 +6,9 @@ import ProductList from "../components/ProductList";
 
 export default function Prodotti() {
   const [products, setProducts] = useState([]);
-  const { budgetMode } = useContext(BudgetContext);
-  const filteredProducts = budgetMode
-  ? products.filter(product => product.price <= 30)
+  const { maxPrice } = useContext(BudgetContext);
+  const filteredProducts = maxPrice
+  ? products.filter(product => product.price <= maxPrice)
   : products;
 
   useEffect(() => {

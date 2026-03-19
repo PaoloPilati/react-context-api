@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { BudgetContext } from "../context/BudgetContext";
 
 export default function Navbar () {
-    const { budgetMode, setBudgetMode } = useContext(BudgetContext);
+    const { maxPrice, setMaxPrice } = useContext(BudgetContext);
     return (
     <nav className="navbar navbar-dark bg-dark navbar-expand-lg">
         <div className="container">
@@ -18,11 +18,18 @@ export default function Navbar () {
                 <NavLink to="/prodotti" end className="nav-link">Prodotti</NavLink>
                 <NavLink to="/chi-siamo" end className="nav-link">Chi siamo</NavLink>
                 
-                <button 
+                <input 
+                    type="number"
+                    placeholder="Prezzo max"
+                    value={maxPrice ?? ""}
+                    onChange={(e) => setMaxPrice(Number(e.target.value))}
+                 />
+
+                {/* <button 
                 className="btn btn-outline-light ms-3"
                 onClick={() => setBudgetMode(prev => !prev)}>
                     {budgetMode ? "Disattiva Modalità Budget" : "Attiva Modalità Budget"}
-                </button>
+                </button> */}
 
             </div>
         </div>

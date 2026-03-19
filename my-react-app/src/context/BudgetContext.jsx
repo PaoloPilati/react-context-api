@@ -3,9 +3,9 @@ import { createContext, useState } from "react";
 const BudgetContext = createContext();
 
 function BudgetProvider ({children}) {
-    const [budgetMode, setBudgetMode] = useState(false);
+    const [maxPrice, setMaxPrice] = useState(null);
     return (
-        <BudgetContext.Provider value={{ budgetMode, setBudgetMode }}>
+        <BudgetContext.Provider value={{ maxPrice, setMaxPrice }}>
             {children}
         </BudgetContext.Provider>
         )

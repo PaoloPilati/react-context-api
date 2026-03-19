@@ -22,7 +22,7 @@ export default function Navbar () {
                     type="number"
                     placeholder="Prezzo max"
                     value={maxPrice ?? ""}
-                    onChange={(e) => setMaxPrice(Number(e.target.value))}
+                    onChange={(e) => setMaxPrice(e.target.value === "" ? null : Number(e.target.value))}
                  />
 
                 {/* <button 
